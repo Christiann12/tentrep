@@ -1,0 +1,111 @@
+/* .addProduct{
+
+} */
+
+.addProduct .banner{
+    /* background-color: red; */
+    margin: 80px 80px 0px 80px;
+}
+
+.addProduct .banner .greeting{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000000;
+}
+
+.addProduct .banner .clock{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.addProduct .section1 {
+    background-color: white;
+    margin: 80px 80px 0px 80px;
+    border-radius: 15px;
+}
+
+.addProduct .section1 .header{
+    padding: 30px 30px 10px 30px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 60px;
+    
+}
+
+.addProduct .section1 .employeeform{
+    padding: 10px 30px 30px 30px;
+    
+}
+
+.addProduct .section1 .employeeform .btn{
+    background-color: #DE7229; color: white;
+    border: 1px solid #DE7229 !important;
+}
+
+.addProduct .section2 {
+    background-color: white;
+    margin: 80px 80px 80px 80px;
+    border-radius: 15px;
+}
+
+.addProduct .section2 .header{
+    padding: 30px 30px 10px 30px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 60px;
+}
+
+.addProduct .section2 .employeetable{
+    padding: 10px 30px 30px 30px;
+    /* background-color: red; */
+}
+.addProduct .section2 .employeetable .headertable{
+    background-color: #bebebe !important;
+    color: black;
+}
+.addProduct .section3 {
+    background-color: white;
+    margin: 80px 80px 80px 80px;
+    border-radius: 15px;
+}
+.addProduct .section3 .header{
+    padding: 30px 30px 10px 30px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 60px;
+}
+
+.addProduct .section3 .importform{
+    padding: 10px 30px 10px 30px;
+    /* background-color: red; */
+}
+
+.addProduct .section3 .buttons{
+    padding: 10px 30px 30px 30px;
+    /* background-color: red; */
+}
+
+.addProduct .section3 .btn{
+    /* padding: 10px 100px;  */
+    background: #1A1A1D; color: white;
+    border: 1px solid #1A1A1D !important;
+}

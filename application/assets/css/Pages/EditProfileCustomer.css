@@ -1,0 +1,47 @@
+.editProfileCustomer .banner{
+    margin: 80px 80px 0px 80px;
+}
+
+.editProfileCustomer .banner .greeting{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000000;
+}
+
+.editProfileCustomer .banner .clock{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.editProfileCustomer .section1 {
+    background-color: white;
+    margin: 80px 80px 80px 80px;
+    border-radius: 15px;
+}
+
+.editProfileCustomer .section1 .header{
+    padding: 30px 0px 30px 00px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 60px;
+}
+
+.editProfileCustomer .section1 .userform{
+    padding: 10px 30px 30px 30px;
+}
+
+.editProfileCustomer .section1 .userform .btn{
+    background-color: #DE7229; color: white;
+    border: 1px solid #DE7229 !important;
+}

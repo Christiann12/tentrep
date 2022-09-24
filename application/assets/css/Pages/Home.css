@@ -1,0 +1,108 @@
+.customerHomepage .design{
+    background: #DE7229;
+    /* background-color: white; */
+    margin: 80px 80px 0px 80px;
+    border-radius: 30px 0px 0px 0px; 
+    padding: 100px;
+}
+.customerHomepage .banner{
+    /* background-color: red; */
+    background-color: white;
+    margin: 0px 80px 0px 80px;
+    border-radius: 0px 0px 30px 30px;
+    padding: 50px;
+}
+
+.customerHomepage .banner .greeting{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000000;
+}
+
+.customerHomepage .banner .border{
+    border-width:3px !important;
+}
+
+.customerHomepage .banner .clock{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+.customerHomepage .section1 {
+    /* background-color: white; */
+    margin: 0px 80px 0px 80px;
+    /* border-radius: 0px 0px 15px 15px; */
+    /* padding: 50px; */
+}
+
+.customerHomepage .section1 .header{
+    padding: 30px 30px 10px 30px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 60px;
+}
+
+.customerHomepage .section1 .vetClinics{
+    padding: 20px 30px 30px 30px;
+}
+
+.customerHomepage .section1 .vetClinics .card {
+    border-radius: 10px;
+}
+
+.customerHomepage .section1 .vetClinics .card .cardTitle{
+    margin: 250px 10px 10px 10px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+}
+
+.customerHomepage .section2 {
+    /* background-color: white; */
+    margin: 0px 80px 0px 80px;
+    /* border-radius: 0px 0px 15px 15px; */
+    /* padding: 50px; */
+}
+
+.customerHomepage .section2 .header{
+    padding: 30px 30px 10px 30px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 60px;
+}
+.customerHomepage .section2 .vetClinics{
+    padding: 20px 30px 30px 30px;
+}
+
+.customerHomepage .section2 .vetClinics .card {
+    border-radius: 10px;
+}
+
+.customerHomepage .section2 .vetClinics .card .cardTitle{
+    margin: 250px 10px 10px 10px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+}
