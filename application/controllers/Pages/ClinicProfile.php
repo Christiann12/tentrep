@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Clinics extends CI_Controller {
+class ClinicProfile extends CI_Controller {
 	
 	public function __construct(){
 		parent::__construct();
@@ -9,29 +9,19 @@ class Clinics extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		//model
+		$this->load->model('Vet/Vet_model');
 		$this->load->model('Seller/Seller_model');
         $this->load->model('Seller/Products_model');
+        $this->load->model('Review/Review_model');
 	}
 
-	public function index()
+	public function index($id = '')
 	{
-		// $data['userData'] = $this->Seller_model->getSellerDetail($this->session->userdata('userId'));
-        $this->load->library('Pagination_bootstrap');
-        $links = array(
-            'next' => 'Next',
-            'prev' => 'Previous',
-            'last' => 'Last',
-            'first' => 'First',
-        );
-        $this->pagination_bootstrap->set_links($links);
-        // $vetData = $this->db->select('*')->where('clinicName !=','clinic name')->where('desc !=','description')->where('address !=','address')->where('region !=','region')->where('municipality !=','municipality')->where('province !=','province')->where('barangay !=','barangay')->get('vet');
-        // $vetData = $this->db->get('vet');
-        $vetData = $this->db->select('vet.* ,avg(review.rating) as averageRating ')->from('vet')->join('review', 'vet.vetId = review.referenceId', 'left')->where('clinicName !=','clinic name')->where('desc !=','description')->where('address !=','address')->where('region !=','region')->where('municipality !=','municipality')->where('province !=','province')->where('barangay !=','barangay')->group_by('vet.vetId')->get();
-        $this->pagination_bootstrap->offset(16);
-        $data['counter'] = 0;
-        $data['result'] = $this->pagination_bootstrap->config("/Clinics/", $vetData);
+        $data['vetData'] = $this->Vet_model->getVetDetail($id);
+        $data['avgRating'] = $this->Vet_model->getAvgRating($id);
+		$data['reviews'] = $this->Review_model->getReviews($id);
 		if($this->checkUser()){
-			$data['page'] = "Clinics";
+			$data['page'] = "ClinicProfile";
 			$this->load->view('HeaderAndFooter/Header.php');
 			$this->load->view('Pages/Wrapper.php',$data);
 			$this->load->view('HeaderAndFooter/Footer.php');

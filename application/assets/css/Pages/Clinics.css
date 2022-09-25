@@ -41,16 +41,33 @@
 }
 
 .Clinics .section1 .card {
+    
+    padding-top: 240px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
     border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #3E322A !important;
+}
+.Clinics .section1 .card .cardBody{
+    margin: 0;
+    padding-top: 50px;
+    background: linear-gradient(180deg, rgba(71, 71, 71, 0) 0%, #281D16 90%) !important;
+    border-radius: 0px 0px 8px 8px;
+
 }
 
-.Clinics .section1 .card .cardTitle{
-    margin: 250px 10px 10px 10px;
+.Clinics .section1 .card .cardBody .cardTitle{
+    margin: 10px 10px 0px 10px;
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
-
+    
     color: #FFFFFF;
+}
+.Clinics .section1 .card .cardBody .spacing{
+    margin: 0px 10px 10px 10px;
 }

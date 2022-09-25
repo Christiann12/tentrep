@@ -17,16 +17,20 @@
         <p class="greeting">Clinic List</strong></p>
     </div>
     <div class="section1">
-        <p class="header m-0">User Information</p>
+        <p class="header m-0">Browse Other Clinics</p>
         <div class="row">
             <?php if($result): ?>
                 <?php foreach($result as $test): ?>
                     <?php $counter++; ?>
                         <div class="col-lg-3 col-md-6 col-sm-12 col-12 mt-5">
 
-                            <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                                <p class="cardTitle"><?= $test->clinicName; ?></p>
-                                <input name="storeName" type="text" class="kv-uni-star rating-loading rating-disabled" readonly value="0.5" data-size="sm" title="">
+                            <div class="col-12 card"  onclick="window.location='<?= base_url('ClinicProfile/'.$test->vetId); ?>'" style="background: url(<?php echo $test->clinicpicture == 'empty' ? base_url('application/assets/images/customerbackground.png') : base_url('application/assets/images/clinicpicture/'.$test->clinicpicture); ?>); background-size: cover; background-repeat: no-repeat;">
+                                <div class="cardBody">
+                                    <p class="cardTitle"><?= $test->clinicName; ?></p>
+                                    <div class="spacing">
+                                        <input name="rating" type="text" class="kv-uni-star rating-loading" readonly value="<?= empty($test->averageRating) ? 0 : $test->averageRating ; ?>" data-size="sm" title="">
+                                    </div>
+                                </div>
                             </div>
 
                         </div>

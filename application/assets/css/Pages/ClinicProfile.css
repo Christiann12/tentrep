@@ -1,0 +1,89 @@
+.clinicProfile .design{
+    background: #DE7229;
+    /* background-color: white; */
+    margin: 80px 80px 0px 80px;
+    border-radius: 30px 0px 0px 0px; 
+    padding: 100px;
+}
+.clinicProfile .banner{
+    /* background-color: red; */
+    background-color: white;
+    margin: 0px 80px 0px 80px;
+    /* border-radius: 15px; */
+    padding: 50px;
+}
+
+.clinicProfile .banner .greeting{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000000;
+}
+
+.clinicProfile .banner .border{
+    border-width:3px !important;
+}
+
+.clinicProfile .banner .clock{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+
+
+.clinicProfile .section1 {
+    background-color: white;
+    margin: 0px 80px 0px 80px;
+    /* border-radius: 0px 0px 15px 15px; */
+    /* padding: 50px; */
+}
+
+.clinicProfile .section1 .header{
+    padding: 30px 30px 10px 30px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 60px;
+}
+.clinicProfile .section1 .clinicInformation{
+    padding: 20px 30px 30px 30px;
+}
+
+.clinicProfile .section2 {
+    background-color: white;
+    margin: 0px 80px 80px 80px;
+    border-radius: 0px 0px 15px 15px;
+    /* padding: 50px; */
+}
+.clinicProfile .section2 .header{
+    padding: 30px 30px 10px 30px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.clinicProfile .section2 .ratingTab{
+    padding: 20px 30px 50px 30px;
+    
+}
+.clinicProfile .section2 .ratingTab .ratingPanel{
+    padding: 30px;
+    box-shadow: 4px 4px 10px rgba(158, 145, 137, 0.25);
+}
+.clinicProfile .section2 .ratingTab .btn{
+    background-color: #DE7229; color: white;
+    border: 1px solid #DE7229 !important;
+}

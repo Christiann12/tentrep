@@ -113,4 +113,7 @@ class Vet_model extends CI_Model {
     public function editUser($data = [],$id = ''){
         return $this->db->where('vetId',$id)->update($this->table,$data); 
     }
+    public function getAvgRating($id = ''){
+        return $this->db->select('avg(review.rating) as averageRating ')->from($this->table)->join('review', 'vet.vetId = review.referenceId', 'left')->where('review.referenceId',$id)->group_by('vet.vetId')->get()->row();
+    }
 }

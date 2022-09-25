@@ -31,6 +31,9 @@ $route['clinics/page/(:any)'] = 'Pages/Clinics/index/';
 $route['Clinics/page'] = 'Pages/Clinics/index/';
 $route['clinics/page'] = 'Pages/Clinics/index/';
 
+$route['ClinicProfile/(:any)'] = 'Pages/ClinicProfile/index/$1';
+$route['clinicprofile/(:any)'] = 'Pages/ClinicProfile/index/$1';
+
 $route['ProfileVet'] = 'Pages/ProfileVet';
 $route['profilevet'] = 'Pages/ProfileVet';
 
@@ -48,3 +51,6 @@ $route['addproduct'] = 'Pages/AddProduct';
 
 $route['EditProduct/(:any)'] = 'Pages/AddProduct/editProduct/$1';
 $route['editproduct/(:any)'] = 'Pages/AddProduct/editProduct/$1';
+
+$route['ReviewVet/(:any)'] = 'Pages/Review/reviewVet/$1';
+$route['reviewvet/(:any)'] = 'Pages/Review/reviewVet/$1';

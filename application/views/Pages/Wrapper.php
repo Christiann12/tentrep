@@ -109,7 +109,7 @@ else if( isset($_POST['selectedRegion']) ){
             <?php if (strtolower($this->session->userdata('userRole')) == "customer" ){?>
                 <a href="<?php echo base_url('Home')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'home') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Home</a>
                 <a href="<?php echo base_url('EditProfileCustomer')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'editprofilecustomer') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Edit Profile</a>
-                <a href="<?php echo base_url('Clinics')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'clinics') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Clinics</a>
+                <a href="<?php echo base_url('Clinics')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'clinics' || strtolower($this->uri->segment(1)) == 'clinicprofile' || strtolower($this->uri->segment(1)) == 'reviewvet') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Clinics</a>
                 <a href="<?php echo base_url('Home')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'stores') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Stores</a>
             <?php } ?>
 
