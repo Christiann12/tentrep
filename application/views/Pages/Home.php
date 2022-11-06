@@ -10,6 +10,7 @@
         display: flex;
         flex-direction: column;
     }
+    
 </style>
 <div class="customerHomepage" >
     <div class="design" style="background: url(<?php echo base_url('application/assets/images/customerbackground.png')?>); background-repeat: no-repeat; background-size: cover;">
@@ -38,58 +39,39 @@
             </div>
         </div>
     </div>
-    <div class="section1">
+    <div class="section2">
         <p class="header m-0">Veterinary clinics near you</p>
         <div class="vetClinics">
             <?php if($userData->region != 'region' || $userData->province != 'province' || $userData->municipality != 'municipality' || $userData->barangay != 'barangay') : ?>
-                <div class="row equal ">
+                <div class="row">
 
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name A very Long Name A very Long NameA very Long Name</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
+                <?php if($recommendedClinics): ?>
+                        <?php foreach($recommendedClinics as $test): ?>
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-12 mt-3">
 
-                    </div>
-                    <div class="row  equal mt-3">
+                                    <div class="col-12 card"  onclick="window.location='<?= base_url('ClinicProfile/'.$test->vetId); ?>'" style="background: url(<?php echo $test->clinicpicture == 'empty' ? base_url('application/assets/images/customerbackground.png') : base_url('application/assets/images/clinicpicture/'.$test->clinicpicture); ?>); background-size: cover; background-repeat: no-repeat;">
+                                        <div class="cardBody">
+                                            <p class="cardTitle"><?= $test->clinicName; ?></p>
+                                            <div class="spacing">
+                                                <input name="rating" type="text" class="kv-uni-star rating-loading" readonly value="<?= empty($test->averageRating) ? 0 : $test->averageRating ; ?>" data-size="sm" title="">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name </p>
+                                </div>
+                        <?php  endforeach; ?>
+                    <?php else: ?>
+                        <div class="container">
+                            <center>
+                                <h5 class="text-muted">
+                                    No veterinary clinics near you
+                                </h5>
+                            </center>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
-
+                    <?php endif;?>
+                    
                 </div>
+                
             <?php else : ?>
                 <div class="container">
                    <center>
@@ -108,54 +90,34 @@
         <div class="vetClinics">
            
             <?php if($userData->region != 'region' || $userData->province != 'province' || $userData->municipality != 'municipality' || $userData->barangay != 'barangay') : ?>
-                <div class="row equal ">
+                <div class="row">
 
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name A very Long Name A very Long NameA very Long Name</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
+                    <?php if($recommendedProducts): ?>
+                        <?php foreach($recommendedProducts as $test): ?>
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-12 mt-3">
 
-                    </div>
-                    <div class="row  equal mt-3">
+                                    <div class="col-12 card"  onclick="window.location='<?= base_url('ProductInformation/'.$test->productId); ?>'" style="background: url(<?php echo $test->pictureUrl == 'empty' ? base_url('application/assets/images/noimage.png') : base_url('application/assets/images/productimage/'.$test->pictureUrl); ?>); background-size: cover; background-repeat: no-repeat;">
+                                        <div class="cardBody">
+                                            <p class="cardTitle"><?= $test->name; ?></p>
+                                            <div class="spacing">
+                                                <input name="rating" type="text" class="kv-uni-star rating-loading" readonly value="<?= empty($test->averageRating) ? 0 : $test->averageRating ; ?>" data-size="sm" title="">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name </p>
+                                </div>
+                        <?php  endforeach; ?>
+                    <?php else: ?>
+                        <div class="container">
+                            <center>
+                                <h5 class="text-muted">
+                                    No recommended products
+                                </h5>
+                            </center>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div class="col-12 card"  style="background: url(<?php echo base_url('application/assets/images/loginbackground.png'); ?>); background-size: cover; background-repeat: no-repeat;">
-                        <p class="cardTitle">A very Long Name</p>
-                        </div>
-                    </div>
-
+                    <?php endif;?>
                 </div>
+            
             <?php else : ?>
                 <div class="container">
                    <center>

@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>application/assets/css/Pages/Clinics.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>application/assets/css/Pages/ClinicProfile.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>application/assets/css/Pages/Review.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>application/assets/css/Pages/ViewRatingVet.css">
     
    
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">

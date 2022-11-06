@@ -116,4 +116,19 @@ class Vet_model extends CI_Model {
     public function getAvgRating($id = ''){
         return $this->db->select('avg(review.rating) as averageRating ')->from($this->table)->join('review', 'vet.vetId = review.referenceId', 'left')->where('review.referenceId',$id)->group_by('vet.vetId')->get()->row();
     }
+    public function getRecommended($id = ''){
+        $userData = $this->db->select('*')->from('customer')->where('customerId',$id)->get()->row();
+        return $this->db->select('vet.*,avg(review.rating) as averageRating ')
+        ->from($this->table)
+        ->join('review', 'vet.vetId = review.referenceId', 'left')
+        ->like('region',$userData->region)
+        ->or_like('province',$userData->province)
+        ->or_like('municipality',$userData->municipality)
+        ->or_like('barangay',$userData->barangay)
+        ->group_by('vet.vetId')
+        ->order_by('averageRating','DESC')
+        ->limit(8)
+        ->get()
+        ->result();
+   }
 }

@@ -30,7 +30,7 @@
         <div class="clinicInformation">
             <?php echo form_open_multipart('Common/RegistrationCustomer/saveUser') ?>
                 <div class="form-label-group">
-                    <label for="rating" class="labelDesign">Clinic Rating</label>
+                    <label for="rating" class="labelDesign">Clinic Rating [<?= sizeof($reviews); ?>]</label>
                     <input name="rating" type="text" class="kv-uni-star rating-loading" readonly value="<?= empty($avgRating->averageRating) ? 0 : $avgRating->averageRating ; ?>" data-size="md" title="">
                 </div>
                 <div class="mt-3 form-label-group">

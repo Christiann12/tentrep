@@ -83,4 +83,14 @@ class Products_model extends CI_Model {
             return false;
         }
    }
+   public function getProductDetail($id = ''){
+        return $this->db->select('*,seller.desc as sellerdesc,product.desc as productdesc, seller.pictureUrl as profilepic, product.pictureUrl as productImage')->from($this->table)->join('seller', 'product.sellerId = seller.sellerId', 'left')->where('product.productId',$id)->get()->row();
+   }
+   public function getAvgRating($id = ''){
+        return $this->db->select('avg(review.rating) as averageRating ')->from($this->table)->join('review', 'product.productId = review.referenceId', 'left')->where('review.referenceId',$id)->group_by('product.productId')->get()->row();
+   }
+   public function getRecommended(){
+        return $this->db->select('product.*,avg(review.rating) as averageRating ')->from($this->table)->join('review', 'product.productId = review.referenceId', 'left')->group_by('product.productId')->order_by('averageRating','DESC')->limit(8)->get()->result();
+   }
+    
 }

@@ -174,7 +174,14 @@
 								// console.log()
 								var editLink = '<?php  echo base_url('EditProduct/') ?>' + data.productId;
 								var deleteLink = '<?php  echo base_url('Pages/AddProduct/delete/') ?>' + data.productId;
-								return '<a class="btn btn-success rounded-1 " href="'+editLink+'">Edit</a><a class="btn btn-danger rounded-1 ml-1" href="'+deleteLink+'">Delete</a>';
+								var viewLink = '<?php  echo base_url('ViewRatingProd/viewRating/') ?>' + data.productId;
+								var currentLink = '<?php  echo $this->uri->segment(1) ?>';
+								if(currentLink == 'ViewRatingProd'){
+									return '<a class="btn btn-primary rounded-1 " href="'+viewLink+'">View Rating</a>';
+								}
+								else{
+									return '<a class="btn btn-success rounded-1 " href="'+editLink+'">Edit</a><a class="btn btn-danger rounded-1 ml-1" href="'+deleteLink+'">Delete</a>';
+								}
 							}
 						}
 					],

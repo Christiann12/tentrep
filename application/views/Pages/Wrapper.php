@@ -110,18 +110,20 @@ else if( isset($_POST['selectedRegion']) ){
                 <a href="<?php echo base_url('Home')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'home') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Home</a>
                 <a href="<?php echo base_url('EditProfileCustomer')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'editprofilecustomer') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Edit Profile</a>
                 <a href="<?php echo base_url('Clinics')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'clinics' || strtolower($this->uri->segment(1)) == 'clinicprofile' || strtolower($this->uri->segment(1)) == 'reviewvet') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Clinics</a>
-                <a href="<?php echo base_url('Home')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'stores') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Stores</a>
+                <a href="<?php echo base_url('Products')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'products' || strtolower($this->uri->segment(1)) == 'productinformation') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Products</a>
             <?php } ?>
 
             <?php if (strtolower($this->session->userdata('userRole')) == "vet" ){?>
                 <a href="<?php echo base_url('ProfileVet')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'profilevet') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Profile</a>
                 <a href="<?php echo base_url('EditProfileVet')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'editprofilevet') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Edit Profile</a>
+                <a href="<?php echo base_url('ViewRatingVet')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'viewratingvet') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Rating</a>
             <?php } ?>
             
             <?php if (strtolower($this->session->userdata('userRole')) == "seller" ){?>
                 <a href="<?php echo base_url('ProfileSeller')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'profileseller') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Profile</a>
                 <a href="<?php echo base_url('EditProfileSeller')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'editprofileseller') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Edit Profile</a>
                 <a href="<?php echo base_url('AddProduct')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'addproduct' || strtolower($this->uri->segment(1)) == 'editproduct') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Add Product</a>
+                <a href="<?php echo base_url('ViewRatingProd')?>" class=" <?php echo ((strtolower($this->uri->segment(1)) == 'viewratingprod') ? "active" : null) ?> list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Home">Rating</a>
             <?php } ?>
 
             <a href="<?php echo base_url('Common/Login/signout')?>" class="list-group-item list-group-item-action" data-toggle="tooltip" data-placement="right" title="Log Out" style=" position: absolute; bottom: 0;">Sign Out</a>

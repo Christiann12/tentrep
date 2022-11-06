@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Review extends CI_Controller {
+class ProductInformation extends CI_Controller {
 	
 	public function __construct(){
 		parent::__construct();
@@ -15,26 +15,13 @@ class Review extends CI_Controller {
         $this->load->model('Review/Review_model');
 	}
 
-	public function reviewVet($id = '')
-	{
-        $data['vetData'] = $this->Vet_model->getVetDetail($id);
-        
-		if($this->checkUser()){
-			$data['page'] = "Review";
-			$this->load->view('HeaderAndFooter/Header.php');
-			$this->load->view('Pages/Wrapper.php',$data);
-			$this->load->view('HeaderAndFooter/Footer.php');
-		}
-		else{
-			redirect('Login');
-		}
-	}
-	public function reviewProduct($id = '')
+	public function index($id = '')
 	{
         $data['productData'] = $this->Products_model->getProductDetail($id);
-        
+        $data['avgRating'] = $this->Products_model->getAvgRating($id);
+		$data['reviews'] = $this->Review_model->getReviews($id);
 		if($this->checkUser()){
-			$data['page'] = "ReviewProduct";
+			$data['page'] = "ProductInformation";
 			$this->load->view('HeaderAndFooter/Header.php');
 			$this->load->view('Pages/Wrapper.php',$data);
 			$this->load->view('HeaderAndFooter/Footer.php');
@@ -43,58 +30,6 @@ class Review extends CI_Controller {
 			redirect('Login');
 		}
 	}
-    public function saveReview(){
-        $this->form_validation->set_rules('comment', 'Comment' ,'required|max_length[1000]');
-
-        $postData = array (
-            "revId" => "RVVW-".$this->randStrGen(2,7),
-            'referenceId' => $this->input->post("vetId"),
-            'userId' => $this->session->userdata('userId'),
-            'rating' => empty($this->input->post("rating")) ? 0 : $this->input->post("rating"),
-            'comment' => $this->input->post("comment"),
-            'date' => date('Y-m-d')
-        );
-
-        if($this->form_validation->run() === true){
-            if ($this->Review_model->addReview($postData)){
-                $this->session->set_flashdata('successReview','Edit Success');
-            }
-            else{
-                $this->session->set_flashdata('failReview','Edit Failed');
-            }
-            redirect('ClinicProfile/'.$this->input->post("vetId"));
-        }
-        else{
-			$this->session->set_flashdata('failReview',validation_errors());
-            redirect('ReviewVet/'.$this->input->post("vetId"));
-        }
-    }
-    public function saveReviewProduct(){
-        $this->form_validation->set_rules('comment', 'Comment' ,'required|max_length[1000]');
-
-        $postData = array (
-            "revId" => "RVVW-".$this->randStrGen(2,7),
-            'referenceId' => $this->input->post("vetId"),
-            'userId' => $this->session->userdata('userId'),
-            'rating' => empty($this->input->post("rating")) ? 0 : $this->input->post("rating"),
-            'comment' => $this->input->post("comment"),
-            'date' => date('Y-m-d')
-        );
-
-        if($this->form_validation->run() === true){
-            if ($this->Review_model->addReview($postData)){
-                $this->session->set_flashdata('successReview','Edit Success');
-            }
-            else{
-                $this->session->set_flashdata('failReview','Edit Failed');
-            }
-            redirect('ProductInformation/'.$this->input->post("vetId"));
-        }
-        else{
-			$this->session->set_flashdata('failReview',validation_errors());
-            redirect('ReviewStore/'.$this->input->post("vetId"));
-        }
-    }
     // ---------------------------------------------CUSTOM FUNCTIONS---------------------------------------------
 	public function username_check($userName){
 		$userNameCountVet = $this->db->select('userName')->where('userName',$userName)->get('vet')->num_rows();

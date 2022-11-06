@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class ViewRatingVet extends CI_Controller {
 	
 	public function __construct(){
 		parent::__construct();
@@ -9,18 +9,16 @@ class Home extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		//model
-		$this->load->model('Customer/Customer_model');
-		$this->load->model('Seller/Products_model');
 		$this->load->model('Vet/Vet_model');
+		$this->load->model('Review/Review_model');
 	}
 
 	public function index()
 	{
-		$data['userData'] = $this->Customer_model->getCustomerDetail($this->session->userdata('userId'));
-		$data['recommendedProducts'] = $this->Products_model->getRecommended();
-		$data['recommendedClinics'] = $this->Vet_model->getRecommended($this->session->userdata('userId'));
+		$data['userData'] = $this->Vet_model->getVetDetail($this->session->userdata('userId'));
+        $data['reviews'] = $this->Review_model->getReviews($this->session->userdata('userId'));
 		if($this->checkUser()){
-			$data['page'] = "Home";
+			$data['page'] = "ViewRatingVet";
 			$this->load->view('HeaderAndFooter/Header.php');
 			$this->load->view('Pages/Wrapper.php',$data);
 			$this->load->view('HeaderAndFooter/Footer.php');
@@ -33,7 +31,7 @@ class Home extends CI_Controller {
 		if(empty($this->session->userdata('isLogIn'))){
 			return false;
 		}
-		else if(empty($this->session->userdata('userRole')) || $this->session->userdata('userRole') != 'customer'){
+		else if(empty($this->session->userdata('userRole')) || $this->session->userdata('userRole') != 'vet'){
 			return false;
 		}
 		else if(empty($this->session->userdata('userId'))){
@@ -49,6 +47,9 @@ class Home extends CI_Controller {
 			return false;
 		}
 		else if(empty($this->session->userdata('pictureUrl'))){
+			return false;
+		}
+		else if(empty($this->session->userdata('clinicpicture'))){
 			return false;
 		}
 		return true;
