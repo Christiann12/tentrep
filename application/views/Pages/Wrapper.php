@@ -97,8 +97,10 @@ else if( isset($_POST['selectedRegion']) ){
     <div id="sidebar-wrapper">
         <div class="sidebar-heading mb-3">
             <center>
-                <img src="<?php echo base_url(); ?>application/assets/images/logo1.png" alt="logo"class="d-none">
-                <h6 class="mt-5">Alagang Pilipinas</h6>
+                <img src="<?php echo base_url(); ?>application/assets/images/Logo.png" alt="logo"class="">
+
+                <h6 class="mt-5">Alagang<br>Pilipinas</h6>
+
             </center>
             <p class="text-center">
                <!-- AppEATite -->
